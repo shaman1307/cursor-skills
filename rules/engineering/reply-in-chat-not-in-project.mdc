@@ -1,0 +1,23 @@
+---
+description: Answer the user in chat only — never via project comments, UI copy, or in-repo asides
+alwaysApply: true
+---
+
+# Reply in Chat, Not in the Project
+
+Do **not** answer the user’s prompts, questions, or requests by writing into the project.
+
+Forbidden places for agent↔user replies or meta notes:
+
+- Code comments, docstrings, TODOs, `# NOTE for user`, commit-message asides to the user
+- UI strings, labels, tooltips, empty states, placeholders
+- README / docs / PR descriptions used as a chat substitute
+- Log messages or debug prints meant for the user instead of the conversation
+
+Respond in the **chat** (and only put in the repo what the product/codebase actually needs).
+
+```text
+❌ BAD: // Per your request we skip region X — see chat
+❌ BAD: UI label "Waiting for your approval to reload"
+✅ GOOD: Answer in chat; code/UI stay product-facing only
+```

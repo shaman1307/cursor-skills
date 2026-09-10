@@ -10,8 +10,6 @@ Personal Cursor Agent skills and rules for [shaman1307](https://github.com/shama
 | `rules/engineering/` | Global programming / collaboration conventions (any repo) |
 | `rules/paper-report-style.mdc` | Always-on pointer to the visual skill for docs (MD, HTML, Canvas, …) |
 
-Hostnames, service names, and domain mappings stay in each project’s `.cursor/rules`.
-
 ## Engineering rules
 
 | Rule | Idea |
@@ -22,6 +20,7 @@ Hostnames, service names, and domain mappings stay in each project’s `.cursor/
 | `show-plan-before-live-ops` | Plan + explicit go before live mutations |
 | `trace-code-to-request` | Blame commit (+ recent chat) before changing intentional shortcuts |
 | `hotpath-logging` | No per-item logs without volume estimate |
+| `reply-in-chat-not-in-project` | Answer in chat — not comments/UI/docs in the repo |
 
 ## Install
 
