@@ -1,18 +1,18 @@
 ---
-description: Paper report visual system for documentation HTML (typography, colors, chrome)
+description: Paper report visual system for documentation (MD, HTML, Canvas — typography, colors, chrome)
 alwaysApply: true
 ---
 
 # Paper report style (global)
 
-When creating **documentation HTML, briefings, or styled analytical pages**, apply the **paper-report-style** visual system (fonts, palette, layout chrome only).
+When creating **documentation** (Markdown, HTML, Canvas, briefings, styled analytical pages), apply the **paper-report-style** visual system (fonts, palette, layout chrome only).
 
 Skill: `~/.cursor/skills/paper-report-style/` (`SKILL.md`, `paper-base.css`, `reference.md`).
 
 ## Must use
 
-- Fonts: **Archivo** · **IBM Plex Sans** · **IBM Plex Mono**
+- Fonts (where controllable): **Archivo** · **IBM Plex Sans** · **IBM Plex Mono**
 - Tokens: paper `#EFF2F1`, ink `#141A1C`, accent `#C2661B`, rel `#0E8F73`, fleet `#3A6FD8`, block `#9C3587` (+ dark)
-- Chrome: hairlines, 2–4px radius, cost left-accent on decision/callout; KPI band; numbered secheads
+- Chrome: eyebrow → title → thesis → optional KPI band → numbered sections → callout/ledger/decision; hairlines; 2–4px radius when CSS applies
 
-Does **not** dictate document content. Does **not** override product app UI unless asked.
+Does **not** dictate document content. Does **not** override product app UI unless asked. Not HTML-only.

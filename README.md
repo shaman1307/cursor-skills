@@ -8,7 +8,7 @@ Personal Cursor Agent skills and rules for [shaman1307](https://github.com/shama
 |---|---|
 | `skills/paper-report-style/` | Documentation **visual system** only (fonts, colors, layout chrome) |
 | `rules/engineering/` | Global programming / collaboration conventions (any repo) |
-| `rules/paper-report-style.mdc` | Always-on pointer to the visual skill for docs HTML |
+| `rules/paper-report-style.mdc` | Always-on pointer to the visual skill for docs (MD, HTML, Canvas, …) |
 
 Hostnames, service names, and domain mappings stay in each project’s `.cursor/rules`.
 

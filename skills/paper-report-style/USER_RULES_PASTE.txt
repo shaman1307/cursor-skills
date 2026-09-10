@@ -1,11 +1,11 @@
 # Paste into Cursor → Settings → Rules → User Rules
 # (syncs with your Cursor account)
 
-When creating documentation HTML, briefings, or styled analytical pages for me, use this visual system only (typography, color, layout chrome — not content guidance):
+When creating documentation for me (Markdown, HTML, Canvas, briefings, analytical pages), use this visual system only (typography, color, layout chrome — not content guidance):
 
-Fonts: Archivo (headings/figures), IBM Plex Sans (body), IBM Plex Mono (eyebrows, tags, tabular numbers).
+Fonts (where controllable): Archivo (headings/figures), IBM Plex Sans (body), IBM Plex Mono (eyebrows, tags, tabular numbers).
 Colors (light): paper #EFF2F1, surface #FAFBFA, ink #141A1C, ink-2 #3C4749, ink-3 #667172, rule #D2D8D7, accent/cost #C2661B, success/rel #0E8F73, fleet #3A6FD8, block #9C3587. Support dark equivalents.
-Layout: max-width ~1080px; hairline borders; 2–4px radius; 3px left accent on decision/callout; no Inter/Roboto; no purple gradients; no heavy card shadows.
-Chrome pattern: mono eyebrow → Archivo h1 → thesis → 3-column KPI band → numbered section heads → chart boxes → callout → ledger rows → decision block → optional fold.
-Reuse skill paper-report-style (CSS in paper-base.css) when available.
+Layout: max-width ~1080px when controllable; hairline borders; 2–4px radius; 3px left accent on decision/callout; no Inter/Roboto; no purple gradients; no heavy card shadows.
+Chrome pattern: mono eyebrow → strong title → thesis → optional 3-column KPI band → numbered section heads → callout → ledger → decision.
+Reuse skill paper-report-style (CSS in paper-base.css for HTML; same structure for Markdown).
 Does not override product application UI code unless I ask.
