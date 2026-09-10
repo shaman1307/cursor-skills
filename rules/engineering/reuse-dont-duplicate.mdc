@@ -1,0 +1,23 @@
+---
+description: Never duplicate existing logic; search the repo and reuse or extend it
+alwaysApply: true
+---
+
+# Reuse Existing Functionality
+
+Do not add a parallel implementation of something the codebase already does. Search first, then reuse or extend.
+
+## Must do
+
+- Before a new helper, query, mapper, or UI block, search the repo for the same job (same aggregation, type mapping, filter, status, payload shape).
+- Prefer **reuse as-is**, then **reuse in part** (shared helper, extra column/parameter), then last: a new path.
+- When extending, list callers and mismatches; run tests for those callers.
+- Add a similar new function only when changing the old one would break a caller that needs different semantics — and say why reuse is impossible.
+
+```text
+❌ BAD: Copy an existing mapper/aggregation into a second path with new labels.
+✅ GOOD: Extend the existing source of truth; keep one definition of the business result.
+
+❌ BAD: Fork a shared details/status component for a new variant with hard-coded names.
+✅ GOOD: Reuse the shared component; add only what the new variant uniquely needs.
+```

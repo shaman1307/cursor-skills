@@ -1,0 +1,23 @@
+---
+description: Show a plan and wait for approval before destructive or live-data operations
+alwaysApply: true
+---
+
+# Show Plan Before Live Operations
+
+Never start a destructive or hard-to-undo operation on live data until the user has seen the plan and explicitly said to run it.
+
+Applies to: bulk reload, recalculate, mass enqueue, wipe-and-rebuild, one-off cleanup, and similar mutations.
+
+## Must show first
+
+- **Which targets** (name + id) and **why this set**
+- **What runs** vs **what does not run**
+- **How many** steps/jobs and a one-line risk (gap window, empty period, duplicates)
+
+Measuring and listing is fine. Creating jobs or mutating live stores is not — until go.
+
+```text
+❌ BAD: Discover N targets, start jobs, then explain.
+✅ GOOD: Exact target table + method → wait for go → only then run.
+```

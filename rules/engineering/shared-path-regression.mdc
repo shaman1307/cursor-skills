@@ -1,0 +1,23 @@
+---
+description: When changing shared APIs/hooks/modules, verify every consumer and its tests
+alwaysApply: true
+---
+
+# Shared Path Regression
+
+Changing a shared module is not a single-feature change. Find and verify every consumer before considering the work done.
+
+## Must do
+
+- Search for subclasses, wrappers, and call sites of the touched API, controller, hook, or service.
+- Run unit/integration tests for **each consumer area**, not only the feature you meant to change.
+- An empty happy path is not enough when filters/params are optional — exercise at least one non-empty path.
+- Shared caches / action labels used by multiple callers with different params must not thrash (one shared key, or separate labels/caches).
+
+```text
+❌ BAD: Optimize a shared loader and test only the screen you were editing.
+✅ GOOD: Also verify every other screen/API that mounts the same shared path.
+
+❌ BAD: Two fetches with different params sharing one cache key or action label.
+✅ GOOD: One shared params key per load, or separate labels/caches.
+```

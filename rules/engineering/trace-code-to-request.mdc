@@ -1,0 +1,24 @@
+---
+description: Trace a live bug to the introducing commit and recent user request before changing it
+alwaysApply: true
+---
+
+# Trace Code → Commit → Chat Request
+
+When a live issue comes from our code (skip, shortcut, fail-gate, status quirk), do not treat the snippet as anonymous. Recover *why* it exists before changing it.
+
+## Must do
+
+1. **Code** — name the function/branch that produces the symptom (not a nearby comment).
+2. **Commit** — `git blame` / `git log -L` / `git log -p` until the introducing commit; note date and message.
+3. **If recent** (this project, this month, or still on the working branch) — search agent transcripts for the user wording that asked for that behavior; cite as `[title](uuid)` when used.
+4. **Say the tradeoff** — original request vs what broke — then keep, revert, or replace. Do not silently invert a user optimization or paper over it with a second shortcut.
+
+Transcripts: the current Cursor project’s `agent-transcripts/` (`*.jsonl`). Search the user request and commit subject, not only the function name.
+
+Skip the chat hunt for old upstream / third-party history. Still name the commit.
+
+```text
+❌ BAD: Undo a skip/shortcut without finding who asked for it and why.
+✅ GOOD: Point at commit (+ chat if recent), state the tradeoff, agree what to keep.
+```

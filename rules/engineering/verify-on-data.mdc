@@ -1,0 +1,17 @@
+---
+description: Never diagnose from unverified hypotheses — always check live data first
+alwaysApply: true
+---
+
+# Verify on Data, Do Not Speculate
+
+- Never present an unverified hypothesis as the cause of a production or data issue.
+- Before explaining *why* something is broken, **measure on real data** (API, DB, logs, metrics). Reading code alone is not enough to claim root cause.
+- If verification is impossible (env down, no credentials, unreachable), **stop**: say what you need and wait. Do not invent a cause, ship a speculative fix, or digress into rewrites.
+- Candidate checks are fine; asserting which candidate is true is not — until data confirms it.
+- When data disproves a theory, say so and revise; do not cling to the old story.
+
+```text
+❌ BAD: Name a root cause without querying the stores/APIs that would prove or disprove it.
+✅ GOOD: Measure the relevant sources and the serving path; report numbers; then name the cause — or stop if the environment is unreachable.
+```

@@ -1,0 +1,22 @@
+---
+description: Count log volume and per-iteration cost before adding hot-path logging
+alwaysApply: true
+---
+
+# Hot Path: Logs and Performance
+
+Do not change progress logging in a high-volume loop until log volume and per-iteration cost are counted on a real job size.
+
+## Must do
+
+- Estimate lines per job from a measured item count (not a toy fixture): `items / interval`, `duration / heartbeat`.
+- Do not call `time.time()`, format strings, or `LOG.info` on every item. Increment a counter; log only on the interval (or check elapsed every N items).
+- Distinguish **script-only** changes (reload/pull) from **image/service** log-format changes (rebuild only if the user asked). Do not suggest an unrelated rebuild.
+- Status greps of recent logs must stay cheap (few markers per job, not per item).
+
+```text
+❌ BAD: LOG.info / time.time() on every loop iteration.
+✅ GOOD: log when `seen % N == 0` (or elapsed ≥ T checked every N).
+❌ BAD: Rebuild a service image to ship a script-only tweak.
+✅ GOOD: Script → pull/reload. Service log format → rebuild only if asked.
+```
