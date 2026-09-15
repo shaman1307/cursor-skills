@@ -1,0 +1,19 @@
+---
+description: Always summarize findings for the user in simple words first
+alwaysApply: true
+---
+
+# Simple Words Summary First
+
+When explaining a finding, root cause, status, or plan to the user, **lead with a short summary in plain language** — before tables, IDs, commit hashes, or deep mechanics.
+
+## Must do
+
+- Open with 2–5 short sentences a non-expert can follow.
+- Say what broke, why in everyday terms, and what we will do next.
+- Put evidence, metrics, and code detail **after** that summary (or only if asked).
+
+```text
+❌ BAD: Jump straight into resource_id churn, predecessor negate, and reconcile deltas.
+✅ GOOD: "GCP reused the disk name under a new id. Mongo has the cost; ClickHouse missed it. We will fold new ids onto the existing disk, then rebuild that account."
+```

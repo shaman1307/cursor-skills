@@ -21,6 +21,7 @@ Personal Cursor Agent skills and rules for [shaman1307](https://github.com/shama
 | `trace-code-to-request` | Blame commit (+ recent chat) before changing intentional shortcuts |
 | `hotpath-logging` | No per-item logs without volume estimate |
 | `reply-in-chat-not-in-project` | Answer in chat — not comments/UI/docs in the repo |
+| `simple-words-summary` | Lead with a plain-language summary before deep detail |
 
 ## Install
 
